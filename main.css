@@ -5,6 +5,8 @@
   --secondary-color: #f45905;
   --off-white: #f3f4f6;
   --dark-gray: #6b7280;
+  --dim-white: #808080;
+  --blackish: #131212;
 }
 
 body {
@@ -63,6 +65,7 @@ header h1 {
 .textarea-container {
   position: relative;
 }
+
 .textarea-container button {
   display: none;
   border: 2px solid var(--dark-gray) !important;
@@ -71,4 +74,18 @@ header h1 {
   bottom: 0;
   right: 20%;
   background-color: var(--off-white);
+}
+
+footer {
+  bottom: 0;
+  height: 60px;
+}
+
+footer p {
+  color: var(--dim-white);
+}
+
+footer a {
+  color: var(--blackish);
+  text-decoration: none;
 }
