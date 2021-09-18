@@ -39,7 +39,7 @@ function translateToMinion(event) {
 
 var synth = window.speechSynthesis;
 var pitchValue = 2; //0.1 - 2
-var rateValue = 2; //0.1 - 10
+var rateValue = 1; //0.1 - 10
 var voiceIndex = 2; // 0-4
 
 function speak() {
