@@ -70,7 +70,9 @@ textarea:focus {
 }
 .textarea-container button {
   display: none;
+  border: 2px solid var(--dark-gray) !important;
   position: absolute;
+  min-width: 4rem;
   bottom: 0;
   right: 20%;
   background-color: var(--off-white);
