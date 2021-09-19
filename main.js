@@ -32,6 +32,7 @@ function translateToMinion(event) {
         translated = json.contents.translated;
         output.innerText = translated;
         audiobtn.style.display = "block";
+        textToSpeech();
       })
       .catch(errorHandler);
   }
@@ -42,25 +43,27 @@ var pitchValue = 2; //0.1 - 2
 var rateValue = 1; //0.1 - 10
 var voiceIndex = 2; // 0-4
 
-function speak() {
-  if (synth.speaking) {
-    console.error("speechSynthesis.speaking");
-    return;
-  }
-  if (translated !== "") {
-    var utterThis = new SpeechSynthesisUtterance(translated);
-    utterThis.onend = function (event) {
-      console.log("SpeechSynthesisUtterance.onend");
-    };
-    utterThis.onerror = function (event) {
-      console.error("SpeechSynthesisUtterance.onerror");
-    };
+function textToSpeech() {
+if (synth.speaking) {
+  console.error("speechSynthesis.speaking");
+  return;
+}
+if (translated !== "") {
+  var utterThis = new SpeechSynthesisUtterance(translated);
+  utterThis.onend = function (event) {
+    console.log("SpeechSynthesisUtterance.onend");
+  };
+  utterThis.onerror = function (event) {
+    console.error("SpeechSynthesisUtterance.onerror");
+  };
 
-    utterThis.voice = synth.getVoices()[voiceIndex];
-    utterThis.pitch = pitchValue;
-    utterThis.rate = rateValue;
+  utterThis.voice = synth.getVoices()[voiceIndex];
+  utterThis.pitch = pitchValue;
+  utterThis.rate = rateValue;
+}
+}
+function speak() {
     synth.speak(utterThis);
-  }
 }
 
 audiobtn.addEventListener("click", listenAudio);
