@@ -1,6 +1,9 @@
 # Minion Translator
 
 ## @neogcamp
+
+Do you know minion language? Checkout this translator to understand minion banana language, bababa babanana...
+
 This repo contains source code for my mark6 project hosted at [minion.jsuryakt.codes](https://minion.jsuryakt.codes).
 
 I used [Fun translations API](https://funtranslations.com/api/#minion) to convert input text to minion banana language.
