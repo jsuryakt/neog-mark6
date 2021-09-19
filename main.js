@@ -51,6 +51,7 @@ if (synth.speaking) {
 }
 if (translated !== "") {
   utterThis = new SpeechSynthesisUtterance(translated);
+  console.log("Translated",utterThis);
   utterThis.onend = function (event) {
     console.log("SpeechSynthesisUtterance.onend");
   };
@@ -64,6 +65,7 @@ if (translated !== "") {
 }
 }
 function speak() {
+  console.log(utterThis);
     synth.speak(utterThis);
 }
 
