@@ -42,6 +42,7 @@ var synth = window.speechSynthesis;
 var pitchValue = 2; //0.1 - 2
 var rateValue = 1; //0.1 - 10
 var voiceIndex = 2; // 0-4
+var utterThis;
 
 function textToSpeech() {
 if (synth.speaking) {
@@ -49,7 +50,7 @@ if (synth.speaking) {
   return;
 }
 if (translated !== "") {
-  var utterThis = new SpeechSynthesisUtterance(translated);
+  utterThis = new SpeechSynthesisUtterance(translated);
   utterThis.onend = function (event) {
     console.log("SpeechSynthesisUtterance.onend");
   };
